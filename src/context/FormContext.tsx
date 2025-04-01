@@ -1,5 +1,9 @@
 import React, { createContext, useContext, ReactNode } from "react";
-import { useForm, FormProvider as RHFProvider } from "react-hook-form";
+import {
+  useForm,
+  FormProvider as RHFProvider,
+  UseFormSetValue,
+} from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { EquipmentData } from "../components/EquipmentSpecifications";
@@ -93,7 +97,7 @@ export type FormData = z.infer<typeof formSchema>;
 // Define the context interface
 interface FormContextType {
   getValues: () => FormData;
-  setValue: <T extends keyof FormData>(name: T, value: FormData[T]) => void;
+  setValue: UseFormSetValue<FormData>;
   updateEquipmentData: (data: EquipmentData) => void;
   updateInstallationData: (data: InstallationData) => void;
   updateControlData: (data: ControlSystemData) => void;

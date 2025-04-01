@@ -36,7 +36,6 @@ const EquipmentSpecifications: React.FC<EquipmentSpecificationsProps> = ({
     handleSubmit,
     formState: { errors },
     reset,
-    setValue,
   } = useForm<EquipmentData>({
     resolver: zodResolver(equipmentSchema),
     defaultValues: {
