@@ -16,7 +16,6 @@ import PerformanceMetrics, {
   PerformanceData,
 } from "./components/PerformanceMetrics";
 import Summary from "./components/Summary";
-import TestForm from "./components/TestForm";
 import { FormProvider, useFormContext } from "./context/FormContext";
 
 // Main App component that wraps everything with the FormProvider
@@ -86,10 +85,6 @@ function AppContent() {
   };
 
   const renderActiveSection = () => {
-    if (showTestForm) {
-      return <TestForm />;
-    }
-
     // Get form data from context
     const formData = getValues();
 
